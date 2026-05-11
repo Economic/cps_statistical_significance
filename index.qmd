@@ -1,0 +1,80 @@
+---
+title: "CPS Labor Market: Statistical Significance"
+subtitle: "Changes in unemployment indicators with 90% confidence intervals"
+date: today
+format:
+  html:
+    toc: true
+    toc-location: left
+    toc-title: "Variables"
+    theme: cosmo
+    embed-resources: true
+---
+
+The shaded band around zero shows the range of changes that are **not statistically significant at the 90% level**. A break in the line indicates missing data (October 2025).
+
+---
+
+## Unemployment Rate, 16+
+
+::: {.panel-tabset}
+### 1-Month Change
+![](output/ur_total16_m1.png){width=100%}
+
+### 3-Month Change
+![](output/ur_total16_m3.png){width=100%}
+
+### 6-Month Change
+![](output/ur_total16_m6.png){width=100%}
+
+### 12-Month Change
+![](output/ur_total16_m12.png){width=100%}
+:::
+
+## Unemployment Rate, Black Workers
+
+::: {.panel-tabset}
+### 1-Month Change
+![](output/ur_black_m1.png){width=100%}
+
+### 3-Month Change
+![](output/ur_black_m3.png){width=100%}
+
+### 6-Month Change
+![](output/ur_black_m6.png){width=100%}
+
+### 12-Month Change
+![](output/ur_black_m12.png){width=100%}
+:::
+
+## Unemployment Rate, Teenagers
+
+::: {.panel-tabset}
+### 1-Month Change
+![](output/ur_teens_m1.png){width=100%}
+
+### 3-Month Change
+![](output/ur_teens_m3.png){width=100%}
+
+### 6-Month Change
+![](output/ur_teens_m6.png){width=100%}
+
+### 12-Month Change
+![](output/ur_teens_m12.png){width=100%}
+:::
+
+## Long-Term Unemployment (27+ Weeks)
+
+::: {.panel-tabset}
+### 1-Month Change
+![](output/dou_27weeks_m1.png){width=100%}
+
+### 3-Month Change
+![](output/dou_27weeks_m3.png){width=100%}
+
+### 6-Month Change
+![](output/dou_27weeks_m6.png){width=100%}
+
+### 12-Month Change
+![](output/dou_27weeks_m12.png){width=100%}
+:::
