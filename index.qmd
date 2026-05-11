@@ -1,6 +1,6 @@
 ---
 title: "CPS Labor Market: Statistical Significance"
-subtitle: "Changes in unemployment indicators with 90% confidence intervals"
+subtitle: "Changes in unemployment rates for select groups with 90% confidence intervals"
 date: today
 format:
   html:
