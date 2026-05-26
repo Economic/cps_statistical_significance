@@ -33,7 +33,7 @@ THESE ARE SLIGHTLY DIFFERENT THAN THE ST LOUIS FED ONES because I am not roundin
 <div class="toggle-banner">
   <label style="cursor:pointer; font-weight:500;">
     <input type="checkbox" id="pandToggle" style="margin-right:6px;">
-    Hide pandemic years (2020–2021)
+    Hide pandemic years (Mar 2020–Apr 2021)
   </label>
 </div>
 

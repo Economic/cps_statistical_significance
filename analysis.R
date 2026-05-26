@@ -43,14 +43,14 @@ make_chart <- function(var_name, horizon_code, exclude_pandemic = FALSE) {
     filter(var == var_name, horizon == horizon_code)
 
   if (exclude_pandemic) {
-    plot_data <- plot_data %>% filter(!year(date) %in% c(2020, 2021))
+    plot_data <- plot_data %>% filter(!(date >= as.Date("2020-03-01") & date <= as.Date("2021-04-01")))
   }
 
   plot_data <- plot_data %>%
     complete(date = seq(min(date), max(date), by = "month"))
 
   subtitle <- if (exclude_pandemic) {
-    "Estimates outside the shaded band are significant at the 90% level  |  2020–2021 excluded"
+    "Estimates outside the shaded band are significant at the 90% level  |  Mar 2020–Apr 2021 excluded"
   } else {
     "Estimates outside the shaded band are significant at the 90% level"
   }
