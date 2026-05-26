@@ -1,5 +1,5 @@
 ---
-title: "CPS Labor Market: Statistical Significance"
+title: "CPS Statistical Significance"
 subtitle: "Changes in unemployment rates for select groups with statistical significance"
 format:
   html:
