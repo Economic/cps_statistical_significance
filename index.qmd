@@ -10,72 +10,224 @@ format:
     embed-resources: true
 ---
 
+```{=html}
+<style>
+.chart-nopandemic { display: none; }
+.toggle-banner {
+  background: #f0f4f8;
+  border-left: 4px solid steelblue;
+  padding: 10px 16px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+</style>
+```
+
 The shaded band around zero shows the range of changes that are **not statistically significant at the 90% level**.  A break in the line indicates missing data (October 2025).
 
-THESE ARE SLIGHTLY DIFFERENT THAN THE ST LOUIS FED ONES because I am not rounding to the nearest tenth of a percent. 
+THESE ARE SLIGHTLY DIFFERENT THAN THE ST LOUIS FED ONES because I am not rounding to the nearest tenth of a percent.
 
 ---
+
+```{=html}
+<div class="toggle-banner">
+  <label style="cursor:pointer; font-weight:500;">
+    <input type="checkbox" id="pandToggle" style="margin-right:6px;">
+    Hide pandemic years (2020–2021)
+  </label>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('pandToggle').addEventListener('change', function() {
+    var hide = this.checked;
+    document.querySelectorAll('.chart-full').forEach(function(el) {
+      el.style.display = hide ? 'none' : 'block';
+    });
+    document.querySelectorAll('.chart-nopandemic').forEach(function(el) {
+      el.style.display = hide ? 'block' : 'none';
+    });
+  });
+});
+</script>
+```
 
 ## Unemployment Rate, 16+
 
 ::: {.panel-tabset}
 ### 1-Month Change
+::: {.chart-full}
 ![](output/ur_total16_m1.png){width=100%}
+:::
+::: {.chart-nopandemic}
+![](output/ur_total16_m1_nopandemic.png){width=100%}
+:::
 
 ### 3-Month Change
+::: {.chart-full}
 ![](output/ur_total16_m3.png){width=100%}
+:::
+::: {.chart-nopandemic}
+![](output/ur_total16_m3_nopandemic.png){width=100%}
+:::
 
 ### 6-Month Change
+::: {.chart-full}
 ![](output/ur_total16_m6.png){width=100%}
+:::
+::: {.chart-nopandemic}
+![](output/ur_total16_m6_nopandemic.png){width=100%}
+:::
 
 ### 12-Month Change
+::: {.chart-full}
 ![](output/ur_total16_m12.png){width=100%}
+:::
+::: {.chart-nopandemic}
+![](output/ur_total16_m12_nopandemic.png){width=100%}
+:::
 :::
 
 ## Unemployment Rate, Black Workers
 
 ::: {.panel-tabset}
 ### 1-Month Change
+::: {.chart-full}
 ![](output/ur_black_m1.png){width=100%}
+:::
+::: {.chart-nopandemic}
+![](output/ur_black_m1_nopandemic.png){width=100%}
+:::
 
 ### 3-Month Change
+::: {.chart-full}
 ![](output/ur_black_m3.png){width=100%}
+:::
+::: {.chart-nopandemic}
+![](output/ur_black_m3_nopandemic.png){width=100%}
+:::
 
 ### 6-Month Change
+::: {.chart-full}
 ![](output/ur_black_m6.png){width=100%}
+:::
+::: {.chart-nopandemic}
+![](output/ur_black_m6_nopandemic.png){width=100%}
+:::
 
 ### 12-Month Change
+::: {.chart-full}
 ![](output/ur_black_m12.png){width=100%}
+:::
+::: {.chart-nopandemic}
+![](output/ur_black_m12_nopandemic.png){width=100%}
+:::
+:::
+
+## Unemployment Rate, Asian Workers
+
+::: {.panel-tabset}
+### 1-Month Change
+::: {.chart-full}
+![](output/ur_asian_m1.png){width=100%}
+:::
+::: {.chart-nopandemic}
+![](output/ur_asian_m1_nopandemic.png){width=100%}
+:::
+
+### 3-Month Change
+::: {.chart-full}
+![](output/ur_asian_m3.png){width=100%}
+:::
+::: {.chart-nopandemic}
+![](output/ur_asian_m3_nopandemic.png){width=100%}
+:::
+
+### 6-Month Change
+::: {.chart-full}
+![](output/ur_asian_m6.png){width=100%}
+:::
+::: {.chart-nopandemic}
+![](output/ur_asian_m6_nopandemic.png){width=100%}
+:::
+
+### 12-Month Change
+::: {.chart-full}
+![](output/ur_asian_m12.png){width=100%}
+:::
+::: {.chart-nopandemic}
+![](output/ur_asian_m12_nopandemic.png){width=100%}
+:::
 :::
 
 ## Unemployment Rate, Teenagers
 
 ::: {.panel-tabset}
 ### 1-Month Change
+::: {.chart-full}
 ![](output/ur_teens_m1.png){width=100%}
+:::
+::: {.chart-nopandemic}
+![](output/ur_teens_m1_nopandemic.png){width=100%}
+:::
 
 ### 3-Month Change
+::: {.chart-full}
 ![](output/ur_teens_m3.png){width=100%}
+:::
+::: {.chart-nopandemic}
+![](output/ur_teens_m3_nopandemic.png){width=100%}
+:::
 
 ### 6-Month Change
+::: {.chart-full}
 ![](output/ur_teens_m6.png){width=100%}
+:::
+::: {.chart-nopandemic}
+![](output/ur_teens_m6_nopandemic.png){width=100%}
+:::
 
 ### 12-Month Change
+::: {.chart-full}
 ![](output/ur_teens_m12.png){width=100%}
+:::
+::: {.chart-nopandemic}
+![](output/ur_teens_m12_nopandemic.png){width=100%}
+:::
 :::
 
 ## Long-Term Unemployment (27+ Weeks)
 
 ::: {.panel-tabset}
 ### 1-Month Change
+::: {.chart-full}
 ![](output/dou_27weeks_m1.png){width=100%}
+:::
+::: {.chart-nopandemic}
+![](output/dou_27weeks_m1_nopandemic.png){width=100%}
+:::
 
 ### 3-Month Change
+::: {.chart-full}
 ![](output/dou_27weeks_m3.png){width=100%}
+:::
+::: {.chart-nopandemic}
+![](output/dou_27weeks_m3_nopandemic.png){width=100%}
+:::
 
 ### 6-Month Change
+::: {.chart-full}
 ![](output/dou_27weeks_m6.png){width=100%}
+:::
+::: {.chart-nopandemic}
+![](output/dou_27weeks_m6_nopandemic.png){width=100%}
+:::
 
 ### 12-Month Change
+::: {.chart-full}
 ![](output/dou_27weeks_m12.png){width=100%}
+:::
+::: {.chart-nopandemic}
+![](output/dou_27weeks_m12_nopandemic.png){width=100%}
+:::
 :::
