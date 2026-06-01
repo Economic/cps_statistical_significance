@@ -102,7 +102,7 @@ sample_sizes <- cps %>%
   mutate(date = as.Date(paste(year, month, "01", sep = "-"))) %>%
   group_by(date) %>%
   summarise(
-    total = n(),
+    total = sum(age >= 16, na.rm = TRUE),
     black = sum(as.integer(wbhao) == 2L, na.rm = TRUE),
     asian = sum(as.integer(wbhao) == 4L, na.rm = TRUE),
     teens = sum(age >= 16 & age <= 19, na.rm = TRUE),
