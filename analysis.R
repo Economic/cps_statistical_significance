@@ -95,7 +95,7 @@ make_change_chart <- function(var_name, horizon_code, exclude_pandemic = FALSE) 
 # ── 2. Sample sizes from CPS basic ───────────────────────────────────────────
 
 message("Loading CPS basic monthly data for sample sizes...")
-cps <- load_basic(2016:2026, year, month, age, wbhao)
+cps <- load_basic(2004:2026, year, month, age, wbhao)
 
 sample_sizes <- cps %>%
   filter(age >= 16) %>%
@@ -108,6 +108,11 @@ sample_sizes <- cps %>%
     teens = sum(age >= 16 & age <= 19, na.rm = TRUE),
     .groups = "drop"
   )
+
+sample_sizes %>%
+  filter(date >= as.Date("2004-01-01")) %>%
+  arrange(date) %>%
+  write_csv("output/sample_sizes.csv")
 
 make_sample_chart <- function(var_name, exclude_pandemic = FALSE) {
   grp <- sample_group[var_name]

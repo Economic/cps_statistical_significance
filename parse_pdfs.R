@@ -2,8 +2,6 @@ library(tidyverse)
 library(pdftools)
 library(readxl)
 
-# ── PDF helpers ───────────────────────────────────────────────────────────────
-
 extract_nums <- function(line, skip_chars = 40) {
   if (nchar(line) <= skip_chars) return(numeric(0))
   data_part <- substr(line, skip_chars + 1, nchar(line))
@@ -57,7 +55,6 @@ race_pages_idx <- function(pages, idx, race_pat) {
   })]
 }
 
-# ── Parse one PDF ─────────────────────────────────────────────────────────────
 
 parse_pdf <- function(pdf_path) {
   pages <- pdf_text(pdf_path)
@@ -120,7 +117,6 @@ parse_pdf <- function(pdf_path) {
   )
 }
 
-# ── Excel helpers ─────────────────────────────────────────────────────────────
 
 clean_val_xl <- function(x) {
   x <- trimws(as.character(x))
@@ -157,8 +153,6 @@ find_row_xl <- function(d, row_pat, sec_pat = NULL) {
     actual_m12 = get_col_xl(r, 15), needed_m12 = get_col_xl(r, 16)
   )
 }
-
-# ── Parse Excel file ──────────────────────────────────────────────────────────
 
 parse_excel <- function(xlsx_path, year, month) {
   rd <- function(sh) suppressMessages(
@@ -212,8 +206,6 @@ parse_excel <- function(xlsx_path, year, month) {
   results_to_tibble(res, year, month)
 }
 
-# ── Convert results list to tibble ────────────────────────────────────────────
-
 results_to_tibble <- function(res, year, month) {
   imap_dfr(res, function(vals, var_name) {
     if (is.null(vals)) {
@@ -237,7 +229,6 @@ results_to_tibble <- function(res, year, month) {
   })
 }
 
-# ── Main ──────────────────────────────────────────────────────────────────────
 
 pdf_files <- sort(list.files("inputs", pattern = "Combined_A1_A16.*\\.pdf$", full.names = TRUE))
 xlsx_file <- "inputs/Combined_A1_A16_r1_D290_2026M04.xlsx"
